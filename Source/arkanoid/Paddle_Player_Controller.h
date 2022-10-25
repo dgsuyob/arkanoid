@@ -20,6 +20,7 @@ class ARKANOID_API APaddle_Player_Controller : public APlayerController
 protected:
 	virtual void BeginPlay();
 	void MoveHorizontal(float AxisValue);
+	void MoveVertically(float AxisValue);
 
 	//referencias de ball
 	void Launch();

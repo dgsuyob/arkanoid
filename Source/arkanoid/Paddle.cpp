@@ -47,4 +47,7 @@ void APaddle::MoveHorizontal(float AxisValue)
 {
 	AddMovementInput(FVector(AxisValue, 0.0f, 0.0f), 1.0f, false);
 }
-
+void APaddle::MoveVertically(float AxisValue)
+{
+	AddMovementInput(FVector(0.0f,0.0f, AxisValue), 1.0f, false);
+}

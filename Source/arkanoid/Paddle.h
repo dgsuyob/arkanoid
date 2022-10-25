@@ -33,4 +33,5 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent);
 
 	virtual void MoveHorizontal(float AxisValue);
+	virtual void MoveVertically(float AxisValue);
 };
