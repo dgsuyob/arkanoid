@@ -8,9 +8,13 @@
 /**
  *
  */
+class ABrick;
 UCLASS()
 class ARKANOID_API AarkanoidGameModeBase: public AGameModeBase
 {
 	GENERATED_BODY()
+public:
+	virtual void BeginPlay() override;
 
+	ABrick* ladrillo01;
 };

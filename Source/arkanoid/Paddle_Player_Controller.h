@@ -21,6 +21,7 @@ protected:
 	virtual void BeginPlay();
 	void MoveHorizontal(float AxisValue);
 	void MoveVertically(float AxisValue);
+	void VerticalLimitation();
 
 	//referencias de ball
 	void Launch();

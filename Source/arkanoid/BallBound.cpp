@@ -5,6 +5,7 @@
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Paddle_Player_Controller.h"
+#include "Paddle.h"
 // Sets default values
 ABallBound::ABallBound()
 {
@@ -39,6 +40,9 @@ void ABallBound::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Oth
 	if (OtherActor->ActorHasTag("Ball")) {
 		OtherActor->Destroy();
 		PlayerController_REF->SpawnNewBall();
+	}
+	if (OtherComp->ComponentHasTag("paddle")) {
+		OtherComp->AbortInsideMemberFunction(&APaddle::MoveVertically);
 	}
 }
 

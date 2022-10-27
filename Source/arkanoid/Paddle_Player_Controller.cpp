@@ -47,7 +47,13 @@ void APaddle_Player_Controller::MoveVertically(float AxisValue)
 	auto MyPawn = Cast<APaddle>(GetPawn());
 	if (MyPawn) {
 		MyPawn->MoveVertically(AxisValue);
+		
 	};
+}
+
+void APaddle_Player_Controller::VerticalLimitation()
+{
+
 }
 
 void APaddle_Player_Controller::Launch()
