@@ -41,9 +41,7 @@ void ABallBound::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Oth
 		OtherActor->Destroy();
 		PlayerController_REF->SpawnNewBall();
 	}
-	if (OtherComp->ComponentHasTag("paddle")) {
-		OtherComp->AbortInsideMemberFunction(&APaddle::MoveVertically);
-	}
+
 }
 
 // Called every frame

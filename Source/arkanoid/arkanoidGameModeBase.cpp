@@ -1,12 +1,13 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 #include "arkanoidGameModeBase.h"
 #include "Brick.h"
+#include "Math/Vector.h"
 
 void AarkanoidGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	const FVector Ubicacion(20.0f, 50.0f, 100.0f);
+	const FVector Ubicacion(-80.0f, 0.0f, 340.0f);
 	const FRotator Rotacion(0.0f, 0.0f, 0.0f);
 
 	UWorld* const World = GetWorld();
