@@ -11,7 +11,9 @@ UCLASS()
 class ARKANOID_API APaddle : public APawn
 {
 	GENERATED_BODY()
-
+private:
+	UPROPERTY()
+		class APaddle* rp;
 public:
 	// Sets default values for this pawn's properties
 	APaddle();

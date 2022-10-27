@@ -20,6 +20,7 @@ void APaddle_Player_Controller::SetupInputComponent()
 
 	InputComponent->BindAxis("MoveHorizontal",this,&APaddle_Player_Controller::MoveHorizontal);
 	InputComponent->BindAction("Launch",IE_Pressed,this,&APaddle_Player_Controller::Launch);
+
 	InputComponent->BindAxis("MoveVertically", this, &APaddle_Player_Controller::MoveVertically);
 }
 
@@ -44,16 +45,13 @@ void APaddle_Player_Controller::MoveHorizontal(float AxisValue)
 
 void APaddle_Player_Controller::MoveVertically(float AxisValue)
 {
+	
 	auto MyPawn = Cast<APaddle>(GetPawn());
 	if (MyPawn) {
-		MyPawn->MoveVertically(AxisValue);
 		
+		MyPawn->MoveVertically(AxisValue);
+	
 	};
-}
-
-void APaddle_Player_Controller::VerticalLimitation()
-{
-
 }
 
 void APaddle_Player_Controller::Launch()
