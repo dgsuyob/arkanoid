@@ -11,9 +11,7 @@ UCLASS()
 class ARKANOID_API APaddle : public APawn
 {
 	GENERATED_BODY()
-private:
-	UPROPERTY()
-		class APaddle* rp;
+
 public:
 	// Sets default values for this pawn's properties
 	APaddle();
@@ -27,7 +25,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		UFloatingPawnMovement* FloatingMovement;
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime);
 
@@ -35,5 +33,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent);
 
 	virtual void MoveHorizontal(float AxisValue);
+
 	virtual void MoveVertically(float AxisValue);
 };

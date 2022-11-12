@@ -29,19 +29,9 @@ APaddle::APaddle()
 void APaddle::BeginPlay()
 {
 	Super::BeginPlay();
-	for (int i = 0; i <= 4; i++)
-	{
-		APaddle* paddle = GetWorld() -> SpawnActor<APaddle>(APaddle::StaticClass());
-		if (paddle)
-		{
-			//If the Spawn succeeds, set the Spawned inventory to the local oneand log the success string
-				rp = paddle;
-			GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,FString::Printf(TEXT("%s has been created"),
-				*rp->GetName()));
-		}
-	}
-	
+
 }
+
 
 // Called every frame
 void APaddle::Tick(float DeltaTime)
