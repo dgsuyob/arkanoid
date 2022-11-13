@@ -17,8 +17,16 @@ class ARKANOID_API AarkanoidGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 public:
+
+	AarkanoidGameModeBase();
+
+	UPROPERTY()
+		class APaddle* paleta;
+
+protected:
 	virtual void BeginPlay() override;
 
-	ABrick* ladrillo01;
+public:
 
+	virtual void Tick(float DeltaTime) override;
 };

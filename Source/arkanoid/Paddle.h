@@ -16,6 +16,10 @@ public:
 	// Sets default values for this pawn's properties
 	APaddle();
 
+private:
+	UPROPERTY()
+		APaddle* Instance;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay();

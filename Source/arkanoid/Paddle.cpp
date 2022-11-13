@@ -2,7 +2,7 @@
 
 
 #include "Paddle.h"
-
+#include "Kismet/GameplayStatics.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "Components/StaticMeshComponent.h"
 #include "arkanoidGameModeBase.h"
@@ -11,6 +11,17 @@
 // Sets default values
 APaddle::APaddle()
 {
+	PrimaryActorTick.bCanEverTick = true;
+	//Search for existing Instances of this class
+	TArray<AActor*> Instances;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), APaddle::StaticClass(), Instances);
+	if (Instances.Num() > 1)
+	{
+		//If exist at least one of them, set the instance with the first found one
+		Instance = Cast<APaddle>(Instances[0]); GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("%s already exists"), *Instance->GetName()));
+		//Then Destroy this Actor
+		Destroy();
+	}
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -23,12 +34,15 @@ APaddle::APaddle()
 
 	FloatingMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Floating Pawn Movement"));
 
+
+	
 }
 
 // Called when the game starts or when spawned
 void APaddle::BeginPlay()
 {
 	Super::BeginPlay();
+	
 
 }
 
