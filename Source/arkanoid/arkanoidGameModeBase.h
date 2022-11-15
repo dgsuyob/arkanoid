@@ -22,6 +22,9 @@ public:
 
 	UPROPERTY()
 		class APaddle* paleta;
+private:
+	UPROPERTY(VisibleAnywhere, Category = "Main")
+		class AQueen* reyna;
 
 protected:
 	virtual void BeginPlay() override;
